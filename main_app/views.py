@@ -17,6 +17,13 @@ class GymsList(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # Here we are using the model to query the database for us.
-        context["gyms"] = gyms.objects.all()
+        name = self.request.GET.get("name")
+        if name != None:
+            context["gyms"] = gyms.objects.filter(name__icontains=name)
+            # We add a header context that includes the search param
+            context["header"] = f"Searching for {name}"
+        else:
+            context["gyms"] = gyms.objects.all()
+            # default header for not searching
+            context["header"] = "Local Gyms"
         return context
