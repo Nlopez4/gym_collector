@@ -36,21 +36,25 @@ class GymsCreate(CreateView):
     model = gyms
     fields = ['name', 'img', 'type', 'classes']
     template_name = "gyms_create.html"
+
     def get_success_url(self):
         return reverse('gyms_detail', kwargs={'pk': self.object.pk})
+
 
 class GymsDetail(DetailView):
     model = gyms
     template_name = "gyms_detail.html"
-    
+
 
 class GymsUpdate(UpdateView):
     model = gyms
     fields = ['name', 'img', 'type', 'classes']
     template_name = "gyms_update.html"
+
     def get_success_url(self):
         return reverse('gyms_detail', kwargs={'pk': self.object.pk})
-    
+
+
 class GymsDelete(DeleteView):
     model = gyms
     template_name = "gyms_delete_confirmation.html"
