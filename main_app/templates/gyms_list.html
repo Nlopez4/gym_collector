@@ -1,19 +1,17 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %} {% block content %}
 
-{% block content %}
-
-<h1 class="title">Trending Artists</h1>
+<h1 class="title">Local Gyms</h1>
 <div class="gallery">
-  {% for artist in artists %}
+  {% for gyms in gyms %}
   <a href="">
     <div class="card">
       <div class="card-image">
         <figure class="image is-square">
-          <img src="{{artist.image}}" alt="{{artist.name}}" />
+          <img src="{{gyms.image}}" alt="{{gyms.name}}" />
         </figure>
       </div>
       <div class="card-header">
-        <p class="card-header-title">{{artist.name}}</p>
+        <p class="card-header-title">{{gyms.name}}</p>
       </div>
     </div>
   </a>

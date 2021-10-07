@@ -11,4 +11,4 @@ class About(TemplateView):
 
 # other
 class GymsList(TemplateView):
-    template_name = "artist_list.html"
+    template_name = "gyms_list.html"
