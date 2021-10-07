@@ -60,6 +60,25 @@ p {
   z-index: 5;
 }
 
+.detail__classes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Class {
+  width: 100%;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 0.1fr 3fr 1fr;
+  border-radius: 5px;
+}
+
+.Class:hover {
+  background-color: hsla(0, 0%, 100%, 0.1);
+  cursor: pointer;
+}
+
 img {
   width: 100%;
   height: 500px;
