@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from .models import gyms
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
+from django.urls import reverse
 
 
 class Home(TemplateView):
@@ -35,8 +36,22 @@ class GymsCreate(CreateView):
     model = gyms
     fields = ['name', 'img', 'type', 'classes']
     template_name = "gyms_create.html"
-    success_url = "/gyms/"
+    def get_success_url(self):
+        return reverse('gyms_detail', kwargs={'pk': self.object.pk})
 
 class GymsDetail(DetailView):
     model = gyms
     template_name = "gyms_detail.html"
+    
+
+class GymsUpdate(UpdateView):
+    model = gyms
+    fields = ['name', 'img', 'type', 'classes']
+    template_name = "gyms_update.html"
+    def get_success_url(self):
+        return reverse('gyms_detail', kwargs={'pk': self.object.pk})
+    
+class GymsDelete(DeleteView):
+    model = gyms
+    template_name = "gyms_delete_confirmation.html"
+    success_url = "/gyms/"
