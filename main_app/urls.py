@@ -8,5 +8,6 @@ urlpatterns = [
     # other
     path('gyms/', views.GymsList.as_view(), name="gyms_list"),
     path('gyms/new/', views.GymsCreate.as_view(), name="gyms_create"),
+    path('gyms/<int:pk>/', views.GymsDetail.as_view(), name="gyms_detail")
 
 ]

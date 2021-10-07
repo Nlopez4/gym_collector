@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from .models import gyms
 from django.views.generic.edit import CreateView
+from django.views.generic import DetailView
 
 
 class Home(TemplateView):
@@ -35,3 +36,7 @@ class GymsCreate(CreateView):
     fields = ['name', 'img', 'type', 'classes']
     template_name = "gyms_create.html"
     success_url = "/gyms/"
+
+class GymsDetail(DetailView):
+    model = gyms
+    template_name = "gyms_detail.html"
