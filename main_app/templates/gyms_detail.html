@@ -24,7 +24,23 @@
     </a>
   </div>
   <!--  class times  -->
-  
+  <div class="detail__classes mb-5">
+    <h3 class="title is-3">Class Times</h3>
+
+    {% for Class in gyms.info.all %}
+    <div class="Class">
+      <span>{{forloop.counter}}</span>
+      <span><b>{{Class.type}}</b></span>
+      <span>{{Class.time}}</span>
+    </div>
+    {% empty %}
+    <article class="message">
+      <div class="message-header">
+        <p>No Classes Available</p>
+      </div>
+    </article>
+
+    {% endfor %}
   </div>
   <div class="detail__about">
     <h4 class="title is-4">About</h4>
