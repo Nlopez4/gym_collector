@@ -7,3 +7,8 @@ class Home(TemplateView):
     
 class About(TemplateView):
     template_name = "about.html"
+    
+
+# other
+class GymsList(TemplateView):
+    template_name = "artist_list.html"
