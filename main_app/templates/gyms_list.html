@@ -11,6 +11,11 @@
   </div>
   <!--  This anchor tag will redirect back to artist list without a query param -->
   <a class="button is-dark" href="{% url 'gyms_list' %}">Clear Search</a>
+  <div>
+    <a class="button is-dark" href="{% url 'gyms_create' %}"
+      >Add Your Local Gym</a
+    >
+  </div>
   <h1 class="title pt-5">{{header}}</h1>
   <div class="gallery">
     {% for gyms in gyms %}

@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from .models import gyms
+from django.views.generic.edit import CreateView
 
 
 class Home(TemplateView):
@@ -27,3 +28,10 @@ class GymsList(TemplateView):
             # default header for not searching
             context["header"] = "Local Gyms"
         return context
+
+
+class GymsCreate(CreateView):
+    model = gyms
+    fields = ['name', 'img', 'type', 'classes']
+    template_name = "gyms_create.html"
+    success_url = "/gyms/"
