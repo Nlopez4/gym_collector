@@ -29,11 +29,11 @@ class location(models.Model):
 # one to many model
 
 
-class times(models.Model):
+class Class(models.Model):
     type = models.CharField(max_length=150)
     time = models.IntegerField(default=0)
     gym = models.ForeignKey(
-        gyms, on_delete=models.CASCADE, related_name="time")
+        gyms, on_delete=models.CASCADE, related_name="info")
 
     def __str__(self):
-        return self.title
+        return self.type
