@@ -60,13 +60,13 @@ p {
   z-index: 5;
 }
 
-.detail__classes {
+.detail__techniques {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.Class {
+.Techniques {
   width: 100%;
   padding: 10px;
   display: grid;
@@ -74,7 +74,7 @@ p {
   border-radius: 5px;
 }
 
-.Class:hover {
+.Techniques:hover {
   background-color: hsla(0, 0%, 100%, 0.1);
   cursor: pointer;
 }
