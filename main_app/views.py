@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
+from django.views import View
 from .models import gyms
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 from django.urls import reverse
+from django.shortcuts import redirect
 
 
 class Home(TemplateView):
@@ -59,3 +61,13 @@ class GymsDelete(DeleteView):
     model = gyms
     template_name = "gyms_delete_confirmation.html"
     success_url = "/gyms/"
+
+
+# class ClassCreate(View):
+
+#     def post(self, request, pk):
+#         type = request.POST.get("type")
+#         description = request.POST.get("time")
+#         gym = gyms.objects.get(pk=pk)
+#         Class.objects.create(type=type, time=time, gym=gym)
+#         return redirect('gyms_detail', pk=pk)

@@ -14,4 +14,8 @@ urlpatterns = [
     path('gyms/<int:pk>/delete',
          views.GymsDelete.as_view(), name="gyms_delete"),
 
+    # create new class time for user
+#     path('gyms/<int:pk>/info/new/',
+#          views.ClassCreate.as_view(), name="Class_create")
+
 ]

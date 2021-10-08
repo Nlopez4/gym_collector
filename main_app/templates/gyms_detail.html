@@ -23,20 +23,27 @@
       </span>
     </a>
   </div>
-  <!--  class times  -->
-  <div class="detail__classes mb-5">
-    <h3 class="title is-3">Class Times</h3>
+  <!--  form for creating a class time  -->
+      <div class="control">
+        <input class="button is-primary" type="submit" value="ADD" />
+      </div>
+    </div>
+  </form>
 
-    {% for Class in gyms.info.all %}
-    <div class="Class">
+  <!--  technique  -->
+  <div class="detail__techniques mb-5">
+    <h3 class="title is-3">Techniques Used</h3>
+
+    {% for Techniques in gyms.technique.all %}
+    <div class="Techniques">
       <span>{{forloop.counter}}</span>
-      <span><b>{{Class.type}}</b></span>
-      <span>{{Class.time}}</span>
+      <span><b>{{Techniques.type}}</b></span>
+      <span>{{Techniques.description}}</span>
     </div>
     {% empty %}
     <article class="message">
       <div class="message-header">
-        <p>No Classes Available</p>
+        <p>No Technique added</p>
       </div>
     </article>
 
